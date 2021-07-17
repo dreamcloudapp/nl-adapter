@@ -1,0 +1,21 @@
+{
+  "name": "nl-adapter",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "license": "MIT",
+  "scripts": {
+    "build": "rimraf dist",
+    "preserve": "yarn run build",
+    "serve": "cross-env NODE_ENV=development node dist/index.js\"",
+    "prestart": "yarn run build",
+    "start": "cross-env NODE_ENV=production node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "rimraf": "^3.0.2",
+    "typescript": "^4.3.5"
+  },
+  "devDependencies": {
+    "prettier": "2.3.2"
+  }
+}
