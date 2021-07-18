@@ -4,11 +4,12 @@
   "main": "src/index.ts",
   "license": "MIT",
   "scripts": {
-    "build": "rimraf dist",
+    "build": "rimraf dist && tsc",
     "preserve": "yarn run build",
-    "serve": "cross-env NODE_ENV=development node dist/index.js\"",
+    "serve": "cross-env NODE_ENV=development node dist/src/index.js\"",
+    "test-google:ner": "yarn build && cross-env NODE_ENV=development node dist/test/google.js --ner",
     "prestart": "yarn run build",
-    "start": "cross-env NODE_ENV=production node dist/index.js",
+    "start": "cross-env NODE_ENV=production node dist/src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
@@ -16,6 +17,7 @@
     "typescript": "^4.3.5"
   },
   "devDependencies": {
+    "@google-cloud/language": "^4.2.7",
     "prettier": "2.3.2"
   }
 }

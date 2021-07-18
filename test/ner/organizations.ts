@@ -1,0 +1,15 @@
+export const organizations = [
+  "I was fined by the IRS.",
+  "I was fined by the Internal Revenue Services.",
+  "I was arrested by the FBI.",
+  "I was arrested by the federal bureau of investigation.",
+  " I was arrested by the Familial Business of Infants.",
+  " I saw the Portland Oregon Ducks playing.",
+  "West Ham United is a lot of peoples' favorite football team.",
+  "The Portland Psilocybin Society is an organization that I support.",
+  "The DEA unfortunately exists.",
+  "Google is a great place to work.",
+  "The APA is about to release a new version of the DSM.",
+  "The American Psychological Association is about to release a new version of the DSM.",
+  "The american psych association is about to release a new version of the DSM.",
+];
