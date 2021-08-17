@@ -34,10 +34,19 @@ const testPos = async () => {
     },
   });
   const testRunner = new GooglePosTest(service);
-  await testRunner.verifyPos("The red barn burned brightly.", "ADJ", 1);
-  await testRunner.verifyPos("The red barn burned brightly.", "NOUN", 2);
-  await testRunner.verifyPos("The red barn burned brightly.", "VERB", 3);
-  await testRunner.verifyPos("The red barn burned brightly.", "ADV", 4);
+  const sentence =
+    "The red barn burned brightly, and it fell over in 3 or four minutes.";
+  await testRunner.verifyPos(sentence, "DET", 0);
+  await testRunner.verifyPos(sentence, "ADJ", 1);
+  await testRunner.verifyPos(sentence, "NOUN", 2);
+  await testRunner.verifyPos(sentence, "VERB", 3);
+  await testRunner.verifyPos(sentence, "ADV", 4);
+  await testRunner.verifyPos(sentence, "PUNCT", 5);
+  await testRunner.verifyPos(sentence, "CONJ", 6);
+  await testRunner.verifyPos(sentence, "PRON", 7);
+  await testRunner.verifyPos(sentence, "PRT", 9);
+  await testRunner.verifyPos(sentence, "NUM", 11);
+  await testRunner.verifyPos(sentence, "NUM", 13);
 };
 
 const testType = process.argv[2];

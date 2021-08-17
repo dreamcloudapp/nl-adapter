@@ -8,6 +8,7 @@ type GooglePos =
   | "CONJ"
   | "DET"
   | "NOUN"
+  | "NUM"
   | "PRON"
   | "PRT"
   | "PUNCT"
@@ -40,12 +41,15 @@ class GooglePosTest {
         tokens[index].partOfSpeech &&
         // @ts-ignore
         tokens[index].partOfSpeech.tag;
-      console.log(
-        "result: " +
-          (tag === pos
-            ? "pass"
-            : "expected " + pos + "; got " + (tag || "(empty)"))
-      );
+      if (tag === pos) {
+        console.log("result: pass");
+      } else {
+        console.log("tokens", tokens);
+        console.log(
+          "result: fail, expected " + pos + "; got " + (tag || "(empty)")
+        );
+      }
+
       console.log(
         "============================================================"
       );
